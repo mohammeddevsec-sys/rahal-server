@@ -1,0 +1,4 @@
+﻿node_modules/
+rahal.db
+rahal.db-journal
+.env
