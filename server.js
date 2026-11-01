@@ -1,4 +1,5 @@
-﻿import express from 'express'
+﻿import aiRoute from './aiRoute.js';
+import express from 'express'
 import cors from 'cors'
 import { createReport, listActiveReports, confirmReport, resolveReport, deleteReport, purgeExpired, stats, REPORT_TYPES } from './db.js'
 import { EdgeTTS } from 'edge-tts-universal'
@@ -208,6 +209,8 @@ setInterval(() => {
     console.error('purge failed:', err)
   }
 }, 5 * 60 * 1000)
+
+app.use('/api/ai', aiRoute);
 
 app.listen(PORT, () => {
   console.log('rahal-server listening on http://localhost:' + PORT)
