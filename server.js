@@ -212,8 +212,9 @@ setInterval(() => {
 
 app.use('/api/ai', aiRoute);
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log('rahal-server listening on http://localhost:' + PORT)
   console.log('database:', 'D:\\RAHAL\\server\\data\\rahal.db')
 })
+
 
